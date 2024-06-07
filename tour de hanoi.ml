@@ -18,3 +18,12 @@ let rec hanoi dep aux dest n =
 		deplacer n source destination;
 		hanoi (n-1) aux source destination
 	end;;   
+ let jouer_hanoi n=
+ let start_time = sys.time() in 
+ hanoi n "A" "B" "C";
+ let end_time = sys.time () in 
+ print_enline("temps d'execution : " ^ string_of_float (end_time -. start_time) ^ "secondes ")
+ let () = 
+   let nombre_de_disques= 3 in 
+   jouer_hanoi nombre_de_disques
+   end;;
